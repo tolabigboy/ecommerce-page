@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-orange : hsl(26, 100%, 55%);
+    --primary-pale-orange-bg :hsl(25, 100%, 94%);
+    --dark-blue : hsl(220, 13%, 13%);
+    --drk-greyish-blue-paragraph : hsl(219, 9%, 45%);
+    --greyish-blue : hsl(220, 14%, 75%);
+    --light-greyish-blue : hsl(223, 64%, 98%);
+    --white : hsl(0, 0%, 100%);
+    --black : hsl(0, 0%, 0%);
+    --font-size : 1.2rem;
+    --btn-cart-height : 13px;
+    --btn-cart-width : 129px;
+    --additn-btn-width : 79px;
+    --additn-btn-height : 31px;
+
+
+}
+body {
+    width: 100%;
+    height: 1000vh;
+    font-size: var(--font-size);
+    font-family: 'Kumbh Sans', sans-serif;
+    overflow: hidden;
+    
+}
+.wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* padding: 1.2rem; */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90% !important;
+    padding-top: 1.125rem;
+}
+.left-section {
+    display: flex;
+}
+.logo {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+nav {
+    display: none;
+}
+nav ul {
+    list-style: none;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li:not(:first-child){
+    margin-left: 1rem;
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--drk-greyish-blue-paragraph);
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+.avatar-img {
+    width: 40px;
+    cursor: pointer;
+}
+.cart-img {
+    padding-right: 2rem;
+    cursor: pointer;
+}
+/* hero-page -------------- */
+.hero-page {
+    margin-top: 1.5rem;
+ 
+}
+.carousel-track-container {
+    position: relative;
+    
+}
+.carousel-track {
+    position: relative;
+    width: 100%;
+    max-width: 100rem;
+    height: 18.75rem;
+    overflow: hidden;
+}
+.carousel-slides {
+    position: absolute;
+    width: 100%;
+    height: 18.75rem;
+}
+.carousel-slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.arrow-img-prev {
+    display: grid;
+    place-content: center;
+    z-index: 1;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    border-radius: 50%;
+    background-color: var(--white);
+    transform: translate(-50%, -50%);
+}
+.arrow-img-next {
+    display: grid;
+    place-content: center;
+    z-index: 1;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    border-radius: 50%;
+    background-color: var(--white);
+    transform: translate(50%, -50%);
+}
+.hero-page-content h2 {
+    color: var(--primary-orange);
+    font-size: var(--font-size);
+    padding-block: 1.125rem;
+}
+.hero-page-content h1 {
+    color: var(--black);
+    font-size: 2.125rem;
+
+}
+.hero-page-content p {
+    color: var(--drk-greyish-blue-paragraph);
+    font-size: 1rem;
+    padding-block: 1rem;
+    line-height: 1.5rem;
+}
+.sneaker-amt {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.amount {
+    color: var(--black) !important;
+    font-weight: 700;
+    padding-block: 0 !important;
+}
+.cancel-amt {
+    padding-block: 0 !important;
+}
+.discount-cut {
+    color: var(--primary-orange);
+    background-color: var(--primary-pale-orange-bg);
+    border-radius: .3rem;
+    padding: .2rem;
+}
+.cancel-border {
+    border-top: 1px solid var(--drk-greyish-blue-paragraph);
+    position: absolute;
+    width: 50px;
+    right: 0;
+}
+.hero-content-wrapper {
+    margin: 0 auto;
+    width: min(517px, 90%);
+}
+.additn-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-greyish-blue);
+    padding: 1rem;
+    border-radius: .5rem;
+
+}
+.cart-btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-orange);
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+    
+
+}
+.cart-btn-box p {
+    color: var(--white);
+}
+.carousel-btn {
+    display: none;
+}
+/* tablet screen --------------------------- */
+@media only screen and (min-width : 64em){
+    header {
+        border-bottom: 1px solid var(--greyish-blue);
+        padding-bottom: 1.5rem;
+    }
+    nav {
+        display: block;
+        margin-left: 2rem;
+    }
+    .menu {
+        display: none;
+    }
+    .hero-page {
+        display: flex;
+        width: min(1200px, 90%);
+        margin: 0 auto;
+        padding-top: 5.75rem;
+       
+    }
+    .carousel-track-container {
+        flex: 2;
+    }  
+    .carousel-track {
+        width: 18.75rem;
+        height: 22rem;
+        margin-left: 3.75rem;
+       
+
+    }
+    .hero-page-content {
+        width: min(517px, 100%);
+        flex: 2;
+    }
+    .carousel-slides img {
+        border-radius: 1rem;
+    }
+    .arrow-img-prev {
+        display: none;
+    }
+    .arrow-img-next {
+        display: none;
+    }
+    .cart-btn {
+        display: flex;
+        align-items: center;
+    }
+    .additn-btn {
+        width: 150px;
+    }
+    .cart-btn-box {
+        width: 200px;
+        flex: 1;
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+    .sneaker-amt {
+        display: block;
+        padding-block: 2rem;
+        
+    }
+    .cancel-border {
+        top: 69px;
+        left: 0;
+    }
+    .carousel-btn {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        width: 18.75rem;
+        margin-left: 3.955rem;
+        
+    }
+    .carousel-btn button {
+        border: none;
+        
+    }
+    .carousel-btn img {
+        width: 100%;
+        border-radius: .5rem;
+    }
+    .newImg {
+        position: fixed;
+        background-color: rgba(0, 0, 0, .7);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newImg2 {
+        width: 40%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        object-fit: cover;   
+        border-radius: 1rem;
+    }
+    .gallery-btn {
+        border: none;
+        position: absolute;
+        display: grid;
+        place-content: center;
+        top: 0;
+        z-index: 500;
+        background-color: var(--white);
+        border-radius: 50%;
+        padding: 1rem;
+
+    }
+    #prev-btn {
+        top: 48vh;
+        left: 28%;
+    }
+    #next-btn {
+        top: 48vh;
+        right: 29%;
+    }
+    .imgClose {
+        position: absolute;
+        top: 20vh;
+        cursor: pointer;
+    }
+
+
+
+
+
+}
