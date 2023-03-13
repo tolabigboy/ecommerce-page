@@ -14,11 +14,26 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="overlay"></div>
+    <div class="aside-nav-box">
+      <div>
+        <img class="aside-close-nav" src="/Images/icon-close.svg" alt="" />
+      </div>
+      <nav class="aside-nav">
+        <ul>
+          <li><a href="">Collections</a></li>
+          <li><a href="">Men</a></li>
+          <li><a href="">Women</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
     <header class="wrapper">
       <section class="left-section">
         <div><img class="menu" src="/Images/icon-menu.svg" alt="" /></div>
         <span class="logo"><img src="/Images/logo.svg" alt="" /></span>
-        <nav>
+        <nav class="mobi-nav">
           <ul>
             <li><a href="">Collections</a></li>
             <li><a href="">Men</a></li>
@@ -29,7 +44,10 @@
         </nav>
       </section>
       <section class="right-section">
-        <div class="cart-img"><img src="/Images/icon-cart.svg" alt="" /></div>
+        <div class="cart-img">
+          <img src="/Images/icon-cart.svg" alt="" />
+          <div class="total-carts">0</div>
+        </div>
         <div>
           <img class="avatar-img" src="/Images/image-avatar.png" alt="" />
         </div>
@@ -37,9 +55,9 @@
     </header>
     <main>
       <div class="hero-page wrapper">
-        <div class="carousel-track-container">
-          <div class="carousel-track">
-            <div class="carousel-slides">
+        <div class="carousel-track-container" data-carousel>
+          <div class="carousel-track" data-slides>
+            <div class="carousel-slides" data-active>
               <img src="/Images/image-product-1.jpg" alt="" />
             </div>
             <div class="carousel-slides">
@@ -53,13 +71,13 @@
             </div>
 
             <!-- arrow buttons----- -->
-            <div class="arrow-img-prev">
-              <img class="prev-arrow" src="/Images/icon-previous.svg" alt="" />
-            </div>
+          </div>
+          <div class="carousel-button prev" data-carousel-btn="prev">
+            <img class="prev-arrow" src="/Images/icon-previous.svg" alt="" />
+          </div>
 
-            <div class="arrow-img-next">
-              <img class="next-arrow" src="/Images/icon-next.svg" alt="" />
-            </div>
+          <div class="carousel-button next" data-carousel-btn="next">
+            <img class="next-arrow" src="/Images/icon-next.svg" alt="" />
           </div>
           <!-- carousel-slide-btn---- -->
           <div class="carousel-btn">
@@ -108,9 +126,13 @@
           </div>
           <div class="cart-btn">
             <div class="additn-btn">
-              <img src="/Images/icon-minus.svg" alt="" />
+              <div class="cart-calc subt" data-calc="subt">
+                <img src="/Images/icon-minus.svg" alt="" />
+              </div>
               <div class="cart-numb">0</div>
-              <img src="/Images/icon-plus.svg" alt="" />
+              <div class="cart-calc add" data-calc="add">
+                <img src="/Images/icon-plus.svg" alt="" />
+              </div>
             </div>
             <div class="cart-btn-box">
               <img src="/Images/icon-cart copy.svg" alt="" />
@@ -120,6 +142,7 @@
         </div>
       </div>
     </main>
+
     <script src="main.js"></script>
   </body>
 </html>
