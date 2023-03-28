@@ -118,7 +118,54 @@ header {
 /* hero-page -------------- */
 .hero-page {
     margin-top: 1.5rem;
+    position: relative;
  
+}
+.cart-box {
+  
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    background-color: var(--white);
+    z-index: 100;
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+.cart {
+    border-bottom: 1px solid rgb(62, 61, 61);
+    padding-bottom: 2rem;
+    text-align: left;
+}
+.cart-box-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 2rem;
+}
+.cart-empty {
+    margin: 0 auto;
+    margin-block: 3rem;
+}
+.display {
+    display: none;
+}
+.multi-result {
+    font-style: italic;
+}
+.checkoutBtn {
+    border: none;
+    border-radius: .5rem;
+    color: var(--white);
+    padding: .5rem;
+    width: 90%;
+    font-size: 1.2rem;
+    background-color: var(--primary-orange);
+    cursor: pointer;
+}
+.cart-img {
+    width: 4.6875rem;
 }
 .carousel-track-container {
     position: relative;
@@ -262,7 +309,7 @@ header {
     border-radius: .5rem;
     position: absolute;
     top: -10px;
-    right: 20px;
+    left: 10px;
     font-size: .8rem;
 
 }
@@ -299,7 +346,13 @@ header {
         width: min(1200px, 90%);
         margin: 0 auto;
         padding-top: 5.75rem;
-       
+    }
+    .cart-box {
+        width: 400px;
+        right: 0;
+        left: auto;
+        top: -2px;
+        box-shadow: 3px 3px 3px 3px var(--greyish-blue);
     }
     .carousel-track-container {
         flex: 2;
@@ -307,9 +360,7 @@ header {
     .carousel-track {
         width: 18.75rem;
         height: 22rem;
-        margin-left: 3.75rem;
-       
-
+        margin-left: 3.75rem; 
     }
     .hero-page-content {
         width: min(517px, 100%);

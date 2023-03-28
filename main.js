@@ -99,23 +99,6 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
-// addition and subtraction click-----------
-// const calcBtns = document.querySelectorAll("[data-calc]");
-// let answer = document.querySelector(".cart-number").textContent;
-// let sum = 0;
-// let minus = 0;
-// calcBtns.forEach((calcBtn) => {
-//   calcBtn.addEventListener("click", () => {
-//     console.log("clicked");
-//     const panel = calcBtn.dataset.cartCalc === "add" ? -1 : 1;
-//     console.log(panel);
-//     const totalClicks = document.querySelector(".cart-numb");
-//     console.log(totalClicks);
-//     const sumValue = Number(totalClicks) + panel;
-//     console.log(sumValue);
-//     totalClicks.textContent = sumValue;
-//   });
-// });
 
 const subt = document.querySelector(".subt");
 const add = document.querySelector(".add");
@@ -138,7 +121,14 @@ const totalCarts = document.querySelector(".total-carts");
 cartBox.addEventListener("click", () => {
   totalCarts.style.visibility = "visible";
   totalCarts.textContent = sum;
-  totalClicks.textContent = sum = 0;
+  totalClicks.textContent = 0;
+  cartAddUp.innerHTML = totalCarts.innerHTML;
+  const multiple = `$${cartAddUp.innerHTML * 125}.00`;
+  cartMultiply.innerHTML = multiple;
+  // cartBtnBox.style.display = "block";
+  cartBtnBox.classList.remove("display");
+  sum = 0;
+  cartEmpty.classList.add("display");
 });
 // toggle click session open-----------------
 const menu = document.querySelector(".menu");
@@ -146,12 +136,14 @@ const overlay = document.querySelector(".overlay");
 const asideNavBox = document.querySelector(".aside-nav-box");
 const asideCloseNav = document.querySelector(".aside-close-nav");
 
+const cartBoxDrop = document.querySelector(".cart-box");
 menu.addEventListener("click", () => {
   console.log("clicked");
   asideNavBox.classList.toggle("active");
   overlay.style.display = "block";
   const body = document.body;
   body.style.overflowY = "hidden";
+  cartBoxDrop.classList.add("display");
 });
 // toggle click session close ---------------
 asideCloseNav.addEventListener("click", () => {
@@ -160,3 +152,57 @@ asideCloseNav.addEventListener("click", () => {
   const body = document.body;
   body.style.overflowY = "visible";
 });
+// drop down cart-------------
+
+const checkOut = document.querySelector(".checkoutBtn");
+const cartAddUp = document.querySelector(".add-result");
+const cartMultiply = document.querySelector(".multi-result");
+const cartImg = document.querySelector(".cart-img");
+const cartBtnBox = document.querySelector(".cart-content-btn-box");
+const cartEmpty = document.querySelector(".cart-empty");
+let sumCartDrop = 1;
+cartImg.addEventListener("click", () => {
+  // cartBoxDrop.style.display = "block";
+  cartBoxDrop.classList.toggle("display");
+  console.log(cartMultiply);
+  // } else {
+  //   cartBoxDrop.style.display = "none";
+  // }
+});
+// generate Html
+const generateHtml = () => {
+  const html = `
+  <div class="cart-content-btn-box">
+  <div class="cart-box-content">
+    <div>
+      <img
+        class="cart-img"
+        src="/Images/image-product-1-thumbnail.jpg"
+        alt=""
+      />
+    </div>
+    <div class="content">
+      <p>Fall limited Edition Sneakers</p>
+      <span>$125 x</span><span class="add-result">0</span> &nbsp<span
+        class="multi-result"
+        >0</span
+      >
+    </div>
+    <div class="delete-img">
+      <img src="/Images/icon-delete.svg" alt="" />
+    </div>
+  </div>
+  <button class="checkoutBtn">Checkout</button>
+</div>
+  `;
+  cartBoxDrop.insertAdjacentHTML("beforeend", html);
+};
+// checkout function----------
+const checkingOut = function (e) {
+  e.preventDefault();
+  // cartBtnBox.innerHTML = "no items added";
+  cartBtnBox.classList.add("display");
+  cartEmpty.classList.remove("display");
+  totalCarts.textContent = 0;
+};
+checkOut.addEventListener("click", checkingOut);
