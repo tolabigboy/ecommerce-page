@@ -153,21 +153,17 @@ asideCloseNav.addEventListener("click", () => {
   body.style.overflowY = "visible";
 });
 // drop down cart-------------
-
 const checkOut = document.querySelector(".checkoutBtn");
 const cartAddUp = document.querySelector(".add-result");
 const cartMultiply = document.querySelector(".multi-result");
 const cartImg = document.querySelector(".cart-img");
 const cartBtnBox = document.querySelector(".cart-content-btn-box");
 const cartEmpty = document.querySelector(".cart-empty");
+const deleteImg = document.querySelector(".delete-img");
 let sumCartDrop = 1;
 cartImg.addEventListener("click", () => {
-  // cartBoxDrop.style.display = "block";
   cartBoxDrop.classList.toggle("display");
   console.log(cartMultiply);
-  // } else {
-  //   cartBoxDrop.style.display = "none";
-  // }
 });
 // generate Html
 const generateHtml = () => {
@@ -205,4 +201,5 @@ const checkingOut = function (e) {
   cartEmpty.classList.remove("display");
   totalCarts.textContent = 0;
 };
-checkOut.addEventListener("click", checkingOut);
+// checkOut.addEventListener("click", checkingOut);
+deleteImg.addEventListener("click", checkingOut);

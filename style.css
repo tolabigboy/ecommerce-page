@@ -167,6 +167,9 @@ header {
 .cart-img {
     width: 4.6875rem;
 }
+.delete-img {
+    cursor: pointer;
+}
 .carousel-track-container {
     position: relative;
     
@@ -327,6 +330,14 @@ header {
     right: 0;
     background-color: rgba(0, 0, 0, .7);
     z-index: 100;
+}
+footer {
+    font-size: 1rem;
+    margin-block: 2rem;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
 }
 /* tablet screen --------------------------- */
 @media only screen and (min-width : 64em){
