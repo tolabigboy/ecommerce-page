@@ -332,7 +332,7 @@ header {
     z-index: 100;
 }
 footer {
-    font-size: 1rem;
+    font-size: 1rem ;
     margin-block: 2rem;
     text-align: center;
 }
